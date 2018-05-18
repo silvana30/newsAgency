@@ -10,25 +10,25 @@ import java.util.List;
 import java.util.Observable;
 
 @Service
-public class RelatedArticlesService extends Observable{
+public class RelatedArticlesService extends Observable {
 
     @Autowired
     private RelatedArticlesRepository relatedArticlesRepository;
 
-    public List<RelatedArticles> findByIdArticle(Article a){
+    public List<RelatedArticles> findByIdArticle(Article a) {
         //return relatedArticlesRepository.findRelatedArticlesByIdArticle(id);
         return relatedArticlesRepository.findAllByIdArticle(a);
     }
 
-    public List<RelatedArticles> findByIdRelated(int id){
+    public List<RelatedArticles> findByIdRelated(int id) {
         return relatedArticlesRepository.findRelatedArticlesByIdArticleRelated(id);
     }
 
-    public RelatedArticles addRelatedArt(Article a, Article reference){
+    public RelatedArticles addRelatedArt(Article a, Article reference) {
 
-            RelatedArticles relatedArticles=new RelatedArticles(a,reference);
-            relatedArticlesRepository.save(relatedArticles);
-            return relatedArticles;
+        RelatedArticles relatedArticles = new RelatedArticles(a, reference);
+        relatedArticlesRepository.save(relatedArticles);
+        return relatedArticles;
 
     }
 }

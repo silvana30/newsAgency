@@ -10,25 +10,26 @@ import java.util.List;
 import java.util.Observable;
 
 @Service
-public class ArticleService extends Observable{
+public class ArticleService extends Observable {
     @Autowired
     private ArticleRepository articleRepository;
 
-    public List<Article> getAllArticles(){
+    public List<Article> getAllArticles() {
         return articleRepository.findAll();
     }
 
-    public Article findById(int id){
+    public Article findById(int id) {
         return articleRepository.findById(id);
     }
-    public Article addArticle(String title,String author,String abstractA,String body){
-        Article article=new Article(title,abstractA,author,body);
+
+    public Article addArticle(String title, String author, String abstractA, String body) {
+        Article article = new Article(title, abstractA, author, body);
         articleRepository.save(article);
         return article;
     }
 
-    public Article update(int id,String title,String author,String abstractA,String body){
-        Article article=articleRepository.findById(id);
+    public Article update(int id, String title, String author, String abstractA, String body) {
+        Article article = articleRepository.findById(id);
         article.setTitle(title);
         article.setAuthor(author);
         article.setAbstractA(abstractA);
@@ -38,13 +39,14 @@ public class ArticleService extends Observable{
         return article;
 
     }
-    public void delete(int id){
-        Article article=articleRepository.findById(id);
+
+    public void delete(int id) {
+        Article article = articleRepository.findById(id);
         articleRepository.delete(article);
     }
 
-    public Article findByTitle(String title){
-        Article article=articleRepository.findArticleByTitle(title);
+    public Article findByTitle(String title) {
+        Article article = articleRepository.findArticleByTitle(title);
         return article;
     }
 }

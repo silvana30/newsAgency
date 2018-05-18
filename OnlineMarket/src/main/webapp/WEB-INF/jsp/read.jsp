@@ -13,14 +13,15 @@
     <title>Read articles</title>
 </head>
 <style>
-    body{
-        background-color:#00a79d;
+    body {
+        background-color: #00a79d;
     }
 
     .topnav {
         background-color: #333;
         overflow: hidden;
     }
+
     .topnav a {
         float: left;
         color: #f2f2f2;
@@ -30,21 +31,7 @@
         font-size: 17px;
     }
 
-    #pcorners{
-        border-radius: 25px;
-        border: 2px solid #000000;
-        padding: 20px;
-        width: 370px;
-        height: 520px;
-    }
 
-    .container{
-        display: flex;
-        justify-content: center;
-    }
-    .center{
-        width: 380px;
-    }
 </style>
 <body>
 <div class="topnav"><a href="/login">LOG IN</a></div>
@@ -64,7 +51,7 @@
 
 
             <td>
-                <b><a href = "/title/${article.title}"><c:out value="${article.title}"/></a></b></td>
+                <b><a href="/title/${article.title}"><c:out value="${article.title}"/></a></b></td>
             </td>
             <td>
                 <c:out value="${article.author}"/>
@@ -80,7 +67,7 @@
 
     </c:forEach>
 
-   <!--${json}-->
+    <!--${json}-->
 
 </table>
 

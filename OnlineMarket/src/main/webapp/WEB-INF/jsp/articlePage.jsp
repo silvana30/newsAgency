@@ -23,19 +23,6 @@
         height: 350px;
     }
 
-    #pcorners {
-        border-radius: 25px;
-        border: 2px solid #000000;
-        padding: 20px;
-        width: 370px;
-        height: 520px;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-    }
-
     .center {
         width: 500px;
     }
@@ -47,38 +34,42 @@
 
     <p id="imagecorners"></p>
 
-
-    <p:set var="article" value="${article}"/>
-    <!--<form action = "/viewArticles" method = GET>-->
     <center>
-        <table>
+        <p:set var="article" value="${article}"/>
+        <!--<form action = "/viewArticles" method = GET>-->
+
+        <table align="center">
+
             <tr>
                 <td><b><h1>${article.title}</h1></b></td>
+
 
             </tr>
             <tr>
                 <td>${article.author}</td>
             </tr>
+            <br/>
+
             <tr>
+
                 <td>${article.abstractA}</td>
             </tr>
+            <br/><br/>
+
             <tr>
                 <td>${article.body}</td>
             </tr>
 
         </table>
 
+
+        <br/>
+
     </center>
 
 
-    <br/>
-
-
-
-
-
 </div>
-
+<p align="left"><b>Related articles</b></p>
 <table id="relatedTable">
     <tr>
         <th>ID</th>
@@ -92,7 +83,7 @@
 
             <td><c:out value="${listaa.id}"></c:out></td>
             <td>
-                <b><a href="/title/${listaa.title}"><c:out value= "${listaa.title}"></c:out></a></b>
+                <b><a href="/title/${listaa.title}"><c:out value="${listaa.title}"></c:out></a></b>
             </td>
 
             <td>

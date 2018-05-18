@@ -21,7 +21,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 @Controller
-public class WriterController implements Observer{
+public class WriterController implements Observer {
 
 
     @Autowired
@@ -43,27 +43,22 @@ public class WriterController implements Observer{
     }
 
 
-
     @RequestMapping(value = "/writerPage/delete", method = RequestMethod.GET)
     public String goToDelete() {
         return "delete";
     }
 
-    /*@RequestMapping(value = "/writerPage/viewArticles", method = RequestMethod.GET)
-    public String goToView() {
-        return "viewArticles";
-    }
-*/
+
     @RequestMapping(value = "/writerPage/logOut", method = RequestMethod.GET)
     public String goToLogOut() {
         return "redirect:/read";
     }
 
     @RequestMapping(value = "/writerPage/addArticle/add", method = RequestMethod.POST)
-    public String addArticle(@RequestParam String title, @RequestParam String author, @RequestParam String abstractA, @RequestParam String body,@RequestParam int related) {
-        Article article=articleService.addArticle(title, author, abstractA, body);
-        Article relatedArt=articleService.findById(related);
-        relatedArticlesService.addRelatedArt(article,relatedArt);
+    public String addArticle(@RequestParam String title, @RequestParam String author, @RequestParam String abstractA, @RequestParam String body, @RequestParam int related) {
+        Article article = articleService.addArticle(title, author, abstractA, body);
+        Article relatedArt = articleService.findById(related);
+        relatedArticlesService.addRelatedArt(article, relatedArt);
         return "redirect:/writerPage/addArticle";
     }
 
@@ -82,18 +77,18 @@ public class WriterController implements Observer{
     @RequestMapping(value = "/writerPage/viewArticles", method = RequestMethod.GET)
     public String viewArticle(Model model) {
 
-        List<Article> articles1=new ArrayList<>();
-        for(Article a:articleService.getAllArticles()){
+        List<Article> articles1 = new ArrayList<>();
+        for (Article a : articleService.getAllArticles()) {
             articles1.add(a);
         }
-        model.addAttribute("articles1",articles1);
+        model.addAttribute("articles1", articles1);
 
         return "viewArticles";
     }
 
     @Override
     public void update(Observable o, Object arg) {
-        System.out.println((String)arg);
+        System.out.println((String) arg);
 
     }
 }

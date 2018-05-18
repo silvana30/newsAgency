@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "article")
-public class Article implements Serializable{
+public class Article implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,7 @@ public class Article implements Serializable{
     @Column(name = "abstractA")
     private String abstractA;
 
-    @Column(name="author")
+    @Column(name = "author")
     private String author;
 
     @Column(name = "body")
@@ -74,7 +74,6 @@ public class Article implements Serializable{
     public void setBody(String body) {
         this.body = body;
     }
-
 
 
     @Override

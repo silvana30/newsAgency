@@ -12,7 +12,7 @@
 </head>
 <style>
 
-    #pcorners{
+    #pcorners {
         border-radius: 25px;
         border: 2px solid #000000;
         padding: 20px;
@@ -20,28 +20,29 @@
         height: 520px;
     }
 
-    .container{
+    .container {
         display: flex;
         justify-content: center;
     }
-    .center{
+
+    .center {
         width: 380px;
     }
 </style>
 
 <body style="background-color:#00a79d">
-<div class = "container">
-    <div class ="center">
+<div class="container">
+    <div class="center">
         <div id="pcorners" align="center">
 
-           <!-- <p id="imagecorners">Log In</p>-->
-            <form action = "/adminPage" method = "POST">
-                Username: <input type = "text" name = "username"/><br/><br/>
-                Password: <input type = "password" name = "password"/><br/><br/>
-                <input type = "submit" value = "Register"/>
+            <!-- <p id="imagecorners">Log In</p>-->
+            <form action="/adminPage" method="POST">
+                Username: <input type="text" name="username"/><br/><br/>
+                Password: <input type="password" name="password"/><br/><br/>
+                <input type="submit" value="Register"/>
             </form>
             <br/>
-            <a href = "/"><input type = "button" value = "Log Out"/></a>
+            <a href="/"><input type="button" value="Log Out"/></a>
         </div>
     </div>
 </div>

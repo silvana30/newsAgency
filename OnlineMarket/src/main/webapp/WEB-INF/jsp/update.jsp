@@ -8,8 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <style>
-    body{
-        background-color:#00a79d;
+    body {
+        background-color: #00a79d;
     }
 
     .topnav {
@@ -39,45 +39,18 @@
         color: black;
     }
 
-    #prodTable{
-        border-collapse: collapse;
-        width:70%;
-        align: center;
-    }
-
-    #prodTable td, #prodTable th{
+    #prodTable td, #prodTable th {
         border: 1px solid #ddd;
         padding: 8px;
         background-color: lightblue;
     }
 
-    #prodTable th{
+    #prodTable th {
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: left;
         background-color: #7FB8AF;
         color: #0E433B;
-    }
-
-
-    .button1 {
-        border: none;
-        color: white;
-        padding: 16px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 12px;
-        margin: 4px 2px;
-        -webkit-transition-duration: 0.4s;
-        transition-duration: 0.4s;
-        cursor: pointer;
-    }
-
-    .subButton{
-        background-color: white;
-        color: black;
-        border: 2px solid #008CBA;
     }
 
     .subButton:hover {
@@ -90,9 +63,9 @@
     <title>Update</title>
 </head>
 <body>
-<div class = "topnav">
+<div class="topnav">
     <a href="/writerPage/addArticle">Add Article</a>
-    <a class ="active" href="/writerPage/update">Update</a>
+    <a class="active" href="/writerPage/update">Update</a>
     <a href="/writerPage/delete">Delete</a>
     <a href="/writerPage/viewArticles">View articles</a>
 
@@ -100,14 +73,14 @@
 </div>
 <br/><br/>
 
-<form action = "/writerPage/update/update" method = "POST">
+<form action="/writerPage/update/update" method="POST">
     ID: <input type="text" name="id"/><br/><br/>
-    Title: <input type = "text" name = "title"/><br/><br/>
-    Author: <input type = "text" name = "author"/><br/><br/>
-    Abstract: <input type = "text" name = "abstractA"/><br/><br/>
-    Body: <input type = "text" name = "body"/><br/><br/>
+    Title: <input type="text" name="title"/><br/><br/>
+    Author: <input type="text" name="author"/><br/><br/>
+    Abstract: <input type="text" name="abstractA"/><br/><br/>
+    Body: <input type="text" name="body"/><br/><br/>
 
-    <input type = "submit" value = "Update"/>
+    <input type="submit" value="Update"/>
 </form>
 </body>
 </html>

@@ -22,11 +22,6 @@ public class LogController {
     @Autowired
     private AdminService adminService;
 
-    /*@Autowired
-    public LogController(WriterService writerService, AdminService adminService) {
-        this.writerService = writerService;
-        this.adminService = adminService;
-    }*/
 
     @RequestMapping(value = "/loginPage", method = RequestMethod.POST)
     public String loginPage(Model model, @RequestParam String username, @RequestParam String password) {
@@ -36,21 +31,19 @@ public class LogController {
         Admin user = adminService.login(username, password);
 
         if (user == null) {
-            //returnedView = "redirect:/home/"+username;
+
             Writer writer = writerService.login(username, password);
             if (writerService.login(username, password) != null) {
-                //returnedView = "redirect:/home/"+username;
-                //returnedView = "writerPage";
-                returnedView="addArticle";
-                model.addAttribute("msg", "OK");}
+
+                returnedView = "addArticle";
+                model.addAttribute("msg", "OK");
+            }
 
 
-
-        }
-        else {
+        } else {
             returnedView = "adminPage";
             model.addAttribute("msg", "OK");
-            //returnedView = "read";
+
         }
 
 

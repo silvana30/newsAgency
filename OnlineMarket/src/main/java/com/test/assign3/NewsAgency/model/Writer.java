@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "writer")
-public class Writer implements Serializable{
+public class Writer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

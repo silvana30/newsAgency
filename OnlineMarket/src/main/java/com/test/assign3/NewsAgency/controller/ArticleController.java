@@ -16,7 +16,7 @@ public class ArticleController {
     private ArticleService articleService;
 
     @GetMapping("/articles")
-    public List<Article> getAllArticles(){
+    public List<Article> getAllArticles() {
         return articleService.getAllArticles();
     }
 }

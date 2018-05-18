@@ -12,32 +12,22 @@
 </head>
 <style>
 
-    #pcorners{
-        border-radius: 25px;
-        border: 2px solid #000000;
-        padding: 20px;
-        width: 330px;
-        height: 520px;
-    }
 
-    .container{
+    .container {
         display: flex;
         justify-content: center;
     }
-    .center{
-        width: 380px;
-    }
+
 </style>
 <body>
-<div class = "container">
-      <a href="/writerPage/addArticle">Add Article</a>
-        <a href="/writerPage/update">Update</a>
-        <a href="/writerPage/delete">Delete</a>
+<div class="container">
+    <a href="/writerPage/addArticle">Add Article</a>
+    <a href="/writerPage/update">Update</a>
+    <a href="/writerPage/delete">Delete</a>
     <a href="/writerPage/viewArticles">View articles</a>
     <a href="/writerPage/logOut">Logout</a>
 </div>
 <br/><br/>
-
 
 
 </body>

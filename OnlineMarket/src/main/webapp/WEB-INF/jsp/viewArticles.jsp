@@ -11,8 +11,8 @@
 <html>
 
 <style>
-    body{
-        background-color:#00a79d;
+    body {
+        background-color: #00a79d;
     }
 
     .topnav {
@@ -42,26 +42,25 @@
         color: black;
     }
 
-    #prodTable{
+    #prodTable {
         border-collapse: collapse;
-        width:70%;
+        width: 70%;
         align: center;
     }
 
-    #prodTable td, #prodTable th{
+    #prodTable td, #prodTable th {
         border: 1px solid #ddd;
         padding: 8px;
         background-color: lightblue;
     }
 
-    #prodTable th{
+    #prodTable th {
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: left;
         background-color: #7FB8AF;
         color: #0E433B;
     }
-
 
     .button1 {
         border: none;
@@ -77,7 +76,7 @@
         cursor: pointer;
     }
 
-    .subButton{
+    .subButton {
         background-color: white;
         color: black;
         border: 2px solid #008CBA;
@@ -103,34 +102,35 @@
 </div>
 
 <br/><br/>
-<!--<form action="/writerPage/viewArticles/viewArticles" method="GET">-->
-    <table id="articlesTable">
+
+
+<table id="articlesTable">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+
+    </tr>
+    <c:forEach var="article" items="${articles1}">
+
         <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Author</th>
+            <td><c:out value="${article.id}"/></td>
+
+
+            <td>
+                <c:out value="${article.title}"/></td>
+
+            <td>
+                <c:out value="${article.author}"/>
+            </td>
+
 
         </tr>
-        <c:forEach var="article" items="${articles1}">
 
-            <tr>
-                <td><c:out value="${article.id}"/></td>
+    </c:forEach>
 
 
-                <td>
-                    <c:out value="${article.title}"/></td>
-
-                <td>
-                    <c:out value="${article.author}"/>
-                </td>
-
-
-            </tr>
-
-        </c:forEach>
-
-
-    </table>
+</table>
 
 <!--</form>-->
 </body>
